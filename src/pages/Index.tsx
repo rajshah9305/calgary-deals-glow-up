@@ -5,10 +5,12 @@ import PremiumPreview from "@/components/PremiumPreview";
 import FeaturedSection from "@/components/FeaturedSection";
 import CommunityStats from "@/components/CommunityStats";
 import Footer from "@/components/Footer";
+import ThreeBackground from "@/components/ThreeBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <ThreeBackground />
       <Header />
       <main>
         <Hero />
