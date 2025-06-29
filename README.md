@@ -1,3 +1,4 @@
+<img width="1440" alt="Screenshot 2025-06-29 at 17 30 32" src="https://github.com/user-attachments/assets/dc23f2c2-7af2-412d-be8c-e9977ed786ba" />
 # Welcome to your Lovable project
 
 ## Project info
