@@ -1,58 +1,66 @@
 
-import { Search, ShoppingBag, User, Menu } from "lucide-react";
+import { Search, ShoppingBag, User, Menu, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white">
-            <ShoppingBag className="h-5 w-5" />
+    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-sm">
+      <div className="container">
+        <div className="flex h-20 items-center justify-between">
+          {/* Logo - Enhanced with better spacing */}
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 text-white shadow-lg shadow-orange-500/25">
+                <ShoppingBag className="h-6 w-6" />
+              </div>
+              <div className="absolute -top-1 -right-1 h-4 w-4 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full animate-pulse"></div>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-black tracking-tight">Calgary Deals</span>
+              <span className="text-xs text-orange-600 font-semibold tracking-widest uppercase">Premium</span>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-bold text-black">Calgary Deals</span>
-            <span className="text-xs text-muted-foreground font-medium">PREMIUM</span>
+
+          {/* Navigation - Enhanced typography */}
+          <nav className="hidden lg:flex items-center gap-12">
+            <a href="/" className="text-base font-semibold text-black hover:text-orange-600 transition-all duration-300 relative group">
+              Home
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="/deals" className="text-base font-medium text-gray-600 hover:text-orange-600 transition-all duration-300 relative group">
+              All Deals
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="/search" className="text-base font-medium text-gray-600 hover:text-orange-600 transition-all duration-300 relative group">
+              Search
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          </nav>
+
+          {/* Enhanced Search Bar */}
+          <div className="hidden xl:flex flex-1 max-w-lg mx-12">
+            <div className="relative w-full group">
+              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400 group-focus-within:text-orange-600 transition-colors" />
+              <Input
+                placeholder="Search premium deals, brands..."
+                className="pl-12 pr-4 h-12 bg-gray-50/50 border-0 focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:shadow-lg transition-all duration-300 rounded-2xl text-base"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="/" className="text-sm font-medium text-black hover:text-orange-500 transition-colors">
-            Home
-          </a>
-          <a href="/deals" className="text-sm font-medium text-muted-foreground hover:text-orange-500 transition-colors">
-            All Deals
-          </a>
-          <a href="/search" className="text-sm font-medium text-muted-foreground hover:text-orange-500 transition-colors">
-            Search
-          </a>
-        </nav>
-
-        {/* Search Bar */}
-        <div className="hidden lg:flex flex-1 max-w-md mx-8">
-          <div className="relative w-full">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              placeholder="Search for deals, brands..."
-              className="pl-10 pr-4 bg-gray-50 border-0 focus:bg-white focus:ring-2 focus:ring-orange-500/20 transition-all"
-            />
+          {/* Actions - Enhanced with better spacing */}
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" size="sm" className="hidden md:flex text-gray-700 hover:text-orange-600 hover:bg-orange-50 font-medium px-6 py-2 rounded-xl transition-all">
+              Sign In
+            </Button>
+            <Button size="sm" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-6 py-2 rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105">
+              Sign Up
+            </Button>
+            <Button variant="ghost" size="sm" className="lg:hidden p-2">
+              <Menu className="h-5 w-5" />
+            </Button>
           </div>
-        </div>
-
-        {/* Actions */}
-        <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="text-black hover:text-orange-500">
-            Sign In
-          </Button>
-          <Button size="sm" className="bg-orange-500 hover:bg-orange-600 text-white font-medium">
-            Sign Up
-          </Button>
-          <Button variant="ghost" size="sm" className="md:hidden">
-            <Menu className="h-4 w-4" />
-          </Button>
         </div>
       </div>
     </header>
